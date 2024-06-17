@@ -27,7 +27,7 @@ Advanced Java Topics
 Each topic folder contains relevant code examples, exercises, and projects that demonstrate the concepts covered in that section.
 
 1)Clone the repository:
-git clone https://github.com/2233642642/JAVALAB.git
+git clone https://github.com/2233642642/JAVA-LAB.git
 
 
 2)Navigate to the cloned directory:
