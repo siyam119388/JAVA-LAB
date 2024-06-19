@@ -64,3 +64,50 @@ public class Book {
         System.out.println("Price: $" + price);
     }
 }
+
+
+
+// Class Name:Library
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+    private List<Book> books;
+
+    // Constructor
+    public Library() {
+        books = new ArrayList<>();
+    }
+
+    // Method to add a book to the library
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Book added: " + book.getTitle());
+    }
+
+    // Method to remove a book by ISBN
+    public void removeBookByIsbn(String isbn) {
+        books.removeIf(book -> book.getIsbn().equals(isbn));
+        System.out.println("Book with ISBN " + isbn + " removed.");
+    }
+
+    // Method to find a book by ISBN
+    public Book findBookByIsbn(String isbn) {
+        for (Book book : books) {
+            if (book.getIsbn().equals(isbn)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    // Method to display all books in the library
+    public void displayAllBooks() {
+        for (Book book : books) {
+            book.displayBookInfo();
+            System.out.println();
+        }
+    }
+}
