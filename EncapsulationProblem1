@@ -1,0 +1,35 @@
+public class Person {
+    // Private variables to restrict direct access
+    private String name;
+    private int age;
+
+    // Public constructor to initialize the object
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Public method to get the name
+    public String getName() {
+        return name;
+    }
+
+    // Public method to set the name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Public method to get the age
+    public int getAge() {
+        return age;
+    }
+
+    // Public method to set the age
+    public void setAge(int age) {
+        // Adding validation to the age setter
+        if (age > 0) {
+            this.age = age;
+        } else {
+            System.out.println("Please enter a valid age.");
+        }
+    }
