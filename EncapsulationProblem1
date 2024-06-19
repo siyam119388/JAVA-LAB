@@ -32,4 +32,31 @@ public class Person {
         } else {
             System.out.println("Please enter a valid age.");
         }
+    }   
+ // Public method to display the person's details
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
     }
+}
+
+// Main class to test the encapsulation
+public class EncapsulationExample {
+    public static void main(String[] args) {
+        // Creating a new Person object
+        Person person = new Person("John Doe", 25);
+
+        // Accessing and modifying the data using public methods
+        person.displayInfo();
+
+        person.setName("Jane Doe");
+        person.setAge(30);
+
+        person.displayInfo();
+
+        // Trying to set an invalid age
+        person.setAge(-5);
+
+        // Displaying the final state of the person object
+        person.displayInfo();
+    }
+}
