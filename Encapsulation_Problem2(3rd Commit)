@@ -111,3 +111,43 @@ public class Library {
         }
     }
 }
+
+
+// Class:Main
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a new library
+        Library library = new Library();
+
+        // Create some books
+        Book book1 = new Book("Effective Java", "Joshua Bloch", "978-0134685991", 45.99);
+        Book book2 = new Book("Clean Code", "Robert C. Martin", "978-0132350884", 37.95);
+        Book book3 = new Book("Java Concurrency in Practice", "Brian Goetz", "978-0321349606", 54.99);
+
+        // Add books to the library
+        library.addBook(book1);
+        library.addBook(book2);
+        library.addBook(book3);
+
+        // Display all books in the library
+        System.out.println("All books in the library:");
+        library.displayAllBooks();
+
+        // Find a book by ISBN and display its details
+        System.out.println("Details of the book with ISBN 978-0132350884:");
+        Book foundBook = library.findBookByIsbn("978-0132350884");
+        if (foundBook != null) {
+            foundBook.displayBookInfo();
+        } else {
+            System.out.println("Book not found.");
+        }
+
+        // Remove a book by ISBN
+        library.removeBookByIsbn("978-0321349606");
+
+        // Display all books in the library after removal
+        System.out.println("All books in the library after removal:");
+        library.displayAllBooks();
+    }
+}
