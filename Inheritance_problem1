@@ -23,4 +23,28 @@ public class Animal {
     public void makeSound() {
         System.out.println("Some generic animal sound");
     }
+}  
+
+// Dog.java
+public class Dog extends Animal {
+    // Additional field specific to Dog
+    private String breed;
+
+    // Constructor
+    public Dog(String name, int age, String breed) {
+        super(name, age); // Call the constructor of the superclass (Animal)
+        this.breed = breed;
+    }
+
+    // Getter method for breed
+    public String getBreed() {
+        return breed;
+    }
+
+    // Overriding the makeSound method for Dog
+    @Override
+    public void makeSound() {
+        System.out.println("Bark");
+    }
 }
+
