@@ -46,3 +46,31 @@ public abstract class WaterVehicle extends Vehicle {
         System.out.println(getName() + " is moving on " + numberOfWheels + " wheels.");
     }
 }
+
+
+// Car.java
+public class Car extends LandVehicle implements Engine {
+    private String engineType;
+
+    public Car(String name, int numberOfWheels, String engineType) {
+        super(name, numberOfWheels);
+        this.engineType = engineType;
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println(getName() + " is starting its " + engineType + " engine.");
+    }
+
+    @Override
+    public void stopEngine() {
+        System.out.println(getName() + " has stopped its " + engineType + " engine.");
+    }
+
+    @Override
+    public void move() {
+        startEngine();
+        super.move();
+        stopEngine();
+    }
+}
