@@ -23,6 +23,34 @@ public abstract class LandVehicle extends Vehicle {
         this.numberOfWheels = numberOfWheels;
     }
 
+
+// Boat.java
+public class Boat extends WaterVehicle implements Engine {
+    private String engineType;
+
+    public Boat(String name, String engineType) {
+        super(name);
+        this.engineType = engineType;
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println(getName() + " is starting its " + engineType + " engine.");
+    }
+
+    @Override
+    public void stopEngine() {
+        System.out.println(getName() + " has stopped its " + engineType + " engine.");
+    }
+
+    @Override
+    public void move() {
+        startEngine();
+        super.move();
+        stopEngine();
+    }
+}
+
     public int getNumberOfWheels() {
         return numberOfWheels;
     } 
