@@ -1,0 +1,34 @@
+// Vehicle.java
+public abstract class Vehicle {
+    private String name;
+
+    public Vehicle(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract void move();
+}
+
+
+// LandVehicle.java
+public abstract class LandVehicle extends Vehicle {
+    private int numberOfWheels;
+
+    public LandVehicle(String name, int numberOfWheels) {
+        super(name);
+        this.numberOfWheels = numberOfWheels;
+    }
+
+    public int getNumberOfWheels() {
+        return numberOfWheels;
+    }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " is moving on " + numberOfWheels + " wheels.");
+    }
+}
