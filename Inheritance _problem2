@@ -21,7 +21,17 @@ public abstract class LandVehicle extends Vehicle {
     public LandVehicle(String name, int numberOfWheels) {
         super(name);
         this.numberOfWheels = numberOfWheels;
-    }
+    }   
+
+
+// Engine.java
+public interface Engine {
+    void startEngine();
+    void stopEngine();
+}
+
+
+
 
 
 // Boat.java
