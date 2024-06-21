@@ -25,7 +25,21 @@ public abstract class LandVehicle extends Vehicle {
 
     public int getNumberOfWheels() {
         return numberOfWheels;
+    } 
+
+
+// WaterVehicle.java
+public abstract class WaterVehicle extends Vehicle {
+    public WaterVehicle(String name) {
+        super(name);
     }
+
+    @Override
+    public void move() {
+        System.out.println(getName() + " is sailing on water.");
+    }
+}
+
 
     @Override
     public void move() {
