@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter the first number (numerator): ");
+            int numerator = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("Enter the second number (denominator): ");
+            int denominator = Integer.parseInt(scanner.nextLine());
+
+            int result = divide(numerator, denominator);
+            System.out.println("The result of the division is: " + result);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input! Please enter valid integers.");
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero! Please enter a non-zero denominator.");
+        } finally {
+            scanner.close();
+            System.out.println("Scanner closed.");
+        }
+    }
+
+    public static int divide(int numerator, int denominator) {
+        return numerator / denominator;
+    }
+}
