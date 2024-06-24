@@ -36,5 +36,15 @@ public class InsufficientFundsException extends Exception {
     public InsufficientFundsException(String message) {
         super(message);
     }
+}   
+
+
+//IllegalBankOperationException.java
+public class IllegalBankOperationException extends RuntimeException {
+    public IllegalBankOperationException(String message) {
+        super(message);
+    }
 }
 
+
+//
