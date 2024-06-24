@@ -44,6 +44,55 @@ public class IllegalBankOperationException extends RuntimeException {
     public IllegalBankOperationException(String message) {
         super(message);
     }
+}  
+
+
+import java.util.Scanner;
+
+public class BankApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        BankAccount account = new BankAccount(1000.00); // Initial balance
+
+        while (true) {
+            System.out.println("\n1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+
+            try {
+                switch (choice) {
+                    case 1:
+                        System.out.println("Current balance: $" + account.getBalance());
+                        break;
+                    case 2:
+                        System.out.print("Enter deposit amount: ");
+                        double depositAmount = scanner.nextDouble();
+                        account.deposit(depositAmount);
+                        System.out.println("Deposited: $" + depositAmount);
+                        break;
+                    case 3:
+                        System.out.print("Enter withdrawal amount: ");
+                        double withdrawAmount = scanner.nextDouble();
+                        account.withdraw(withdrawAmount);
+                        System.out.println("Withdrew: $" + withdrawAmount);
+                        break;
+                    case 4:
+                        System.out.println("Exiting...");
+                        scanner.close();
+                        return;
+                    default:
+                        System.out.println("Invalid option. Please try again.");
+                }
+            } catch (InsufficientFundsException e) {
+                System.out.println("Error: " + e.getMessage());
+            } catch (IllegalBankOperationException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }
+}
+
+    }
 }
 
 
