@@ -26,3 +26,20 @@ public class FileOperations {
     }
 }
 
+public class Main {
+    public static void main(String[] args) {
+        FileOperations fileOps = new FileOperations();
+        
+        String filename = "example.txt";
+        String contentToWrite = "Hello, this is a sample file content!";
+        
+        // Write content to file
+        fileOps.writeFile(filename, contentToWrite);
+        System.out.println("Content written to file successfully.");
+
+        // Read content from file
+        String contentRead = fileOps.readFile(filename);
+        System.out.println("Content read from file:");
+        System.out.println(contentRead);
+    }
+}
