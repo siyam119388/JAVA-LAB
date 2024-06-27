@@ -12,3 +12,12 @@ public class Circle extends Shape {
         System.out.println("Drawing a Circle");
     }
 }
+
+
+// Rectangle class extends Shape
+public class Rectangle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a Rectangle");
+    }
+}
