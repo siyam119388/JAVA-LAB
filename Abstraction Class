@@ -1,1 +1,6 @@
+// Abstract class
+abstract class Shape {
+    // Abstract method
+    abstract void draw();
+}
 
