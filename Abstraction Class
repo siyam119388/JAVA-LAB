@@ -21,3 +21,17 @@ public class Rectangle extends Shape {
         System.out.println("Drawing a Rectangle");
     }
 }
+
+
+// Main class to test the implementation
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of Circle and Rectangle
+        Shape circle = new Circle();
+        Shape rectangle = new Rectangle();
+        
+        // Calling the draw method
+        circle.draw();
+        rectangle.draw();
+    }
+}
