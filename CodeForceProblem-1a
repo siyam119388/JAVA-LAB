@@ -1,1 +1,23 @@
 
+import java.util.Scanner;
+
+public class HelpfulMaths {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String s = scanner.nextLine();
+        scanner.close();
+        
+        int count1 = 0, count2 = 0, count3 = 0;
+        
+        // Count the occurrences of each number
+        for (char c : s.toCharArray()) {
+            if (c == '1') {
+                count1++;
+            } else if (c == '2') {
+                count2++;
+            } else if (c == '3') {
+                count3++;
+            }
+        }
+        
+        
