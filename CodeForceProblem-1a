@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class HelpfulMaths {
@@ -20,4 +19,28 @@ public class HelpfulMaths {
             }
         }
         
+        StringBuilder result = new StringBuilder();
         
+        // Append '1's
+        for (int i = 0; i < count1; i++) {
+            result.append("1+");
+        }
+        
+        // Append '2's
+        for (int i = 0; i < count2; i++) {
+            result.append("2+");
+        }
+        
+        // Append '3's
+        for (int i = 0; i < count3; i++) {
+            result.append("3+");
+        }
+        
+        // Remove the last '+' character if the result is not empty
+        if (result.length() > 0) {
+            result.deleteCharAt(result.length() - 1);
+        }
+        
+        System.out.println(result.toString());
+    }
+}
