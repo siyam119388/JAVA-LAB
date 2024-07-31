@@ -1,1 +1,25 @@
 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int t = sc.nextInt();  // Read number of test cases
+        
+        for (int i = 0; i < t; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            
+            // Check if any two digits sum to 10 or more
+            if ((a + b >= 10) || (a + c >= 10) || (b + c >= 10)) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+        
+        sc.close();
+    }
+}
