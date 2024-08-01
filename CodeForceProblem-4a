@@ -1,1 +1,19 @@
+import java.util.Scanner;
 
+public class SuperAgent {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        char[][] matrix = new char[3][3];
+        for (int i = 0; i < 3; i++) {
+            matrix[i] = scanner.next().toCharArray();
+        }
+        
+        if (isSymmetric(matrix)) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+    
+    
