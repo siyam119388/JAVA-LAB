@@ -1,1 +1,44 @@
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class OrdinaryNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int t = scanner.nextInt();  // Number of test cases
+        int[] testCases = new int[t];
+        
+        for (int i = 0; i < t; i++) {
+            testCases[i] = scanner.nextInt();
+        }
+
+        // Generate all ordinary numbers up to 10^9
+        List<Integer> ordinaryNumbers = generateOrdinaryNumbers();
+
+        // Process each test case
+        for (int i = 0; i < t; i++) {
+            int n = testCases[i];
+            int count = countOrdinaryNumbers(ordinaryNumbers, n);
+            System.out.println(count);
+        }
+
+        scanner.close();
+    }
+
+    private static List<Integer> generateOrdinaryNumbers() {
+        List<Integer> ordinaryNumbers = new ArrayList<>();
+
+        for (int digit = 1; digit <= 9; digit++) {
+            int number = digit;
+            while (number <= 1_000_000_000) {
+                ordinaryNumbers.add(number);
+                number = number * 10 + digit;
+            }
+        }
+
+        return ordinaryNumbers;
+    }
+
+    
