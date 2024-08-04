@@ -1,1 +1,30 @@
 
+import java.util.Scanner;
+
+public class ColorfulStones {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read input strings
+        String s = scanner.next();
+        String t = scanner.next();
+
+        int currentPosition = 0; // Liss starts at the first stone (index 0)
+
+        for (char instruction : t.toCharArray()) {
+            // Check if the instruction matches the current stone
+            if (s.charAt(currentPosition) == instruction) {
+                currentPosition++; // Move to the next stone
+                // Ensure Liss doesn't move out of the sequence
+                if (currentPosition >= s.length()) {
+                    break;
+                }
+            }
+        }
+
+        // Output the final 1-based position
+        System.out.println(currentPosition + 1);
+        
+        scanner.close();
+    }
+}
