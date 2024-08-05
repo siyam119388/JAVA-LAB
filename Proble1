@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class BoringApartments {
@@ -12,4 +11,19 @@ public class BoringApartments {
         sc.close();
     }
 
-    
+    private static int countKeypresses(int x) {
+        int digit = x % 10;
+        int length = String.valueOf(x).length();
+        int totalPresses = 0;
+
+        // Adding keypresses for numbers made of the same digit up to the given length
+        for (int i = 1; i <= length; i++) {
+            totalPresses += i;
+        }
+
+        // Adding keypresses for numbers made of smaller digits
+        totalPresses += (digit - 1) * 10;
+
+        return totalPresses;
+    }
+}
