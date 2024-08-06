@@ -1,1 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class CodeForcePractice{
+   public static void main(String[] args) {
+
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		
+		for(int t=0;t<T;t++) {
+			int[] x=new int[4];
+			for(int i=0;i<4;i++) {
+				int a=sc.nextInt();
+				int b=sc.nextInt();
+				x[i]=a;
+			}
+			Arrays.sort(x);
+			int c=Math.abs(x[2]-x[1]);
+			System.out.println(c*c);
+		
+		}
+		
+		
+    }}
 
