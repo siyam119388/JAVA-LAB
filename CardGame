@@ -17,4 +17,24 @@ public class CardGame {
         }
     }
 
-    
+    private static int calculateSuneetWins(int a1, int a2, int b1, int b2) {
+        int wins = 0;
+
+        // All possible combinations of card flips
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                int suneetCard1 = i == 0 ? a1 : a2;
+                int suneetCard2 = i == 0 ? a2 : a1;
+                int slavicCard1 = j == 0 ? b1 : b2;
+                int slavicCard2 = j == 0 ? b2 : b1;
+
+                if (suneetCard1 > slavicCard1 && suneetCard2 >= slavicCard2) {
+                    wins++;
+                } else if (suneetCard1 >= slavicCard1 && suneetCard2 > slavicCard2) {
+                    wins++;
+                }
+            }
+        }
+        return wins;
+    }
+}
