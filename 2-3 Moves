@@ -12,7 +12,9 @@ public class Main {
             
             if (remainder == 0) {
                 System.out.println(moves);
-            }  else {
+            } else if (remainder <= 3) {
+                System.out.println(moves + 1);
+            } else {
                 System.out.println(moves + 2);
             }
         }
@@ -20,4 +22,3 @@ public class Main {
         scanner.close();
     }
 }
-
