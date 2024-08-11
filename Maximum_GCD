@@ -1,1 +1,11 @@
 
+import java.util.Scanner;
+
+public class MaxGCD {
+
+    // Method to compute the maximum GCD value for a given n
+    private static int maxGCD(int n) {
+        return n / 2;
+    }
+
+    
