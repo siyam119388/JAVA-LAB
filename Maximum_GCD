@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class MaxGCD {
@@ -8,4 +7,19 @@ public class MaxGCD {
         return n / 2;
     }
 
-    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int t = scanner.nextInt();
+        
+        // Process each test case
+        for (int i = 0; i < t; i++) {
+            int n = scanner.nextInt();
+            System.out.println(maxGCD(n));
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
